@@ -39,6 +39,10 @@ const userModel = new mongoose.Schema({
     isAdmin: {
         type: Boolean,
         default: false
+    },
+    authDate: {
+        type: String,
+        default: new Date(Date.now()).toString()
     }
 });
 

@@ -11,16 +11,19 @@ passport.use(
     },
     async function (accessToken, refreshToken, profile, cb) {
       try {
-        const user = await User.findOne({ userId: profile.id });
+        const user = await User.findOne({ googleID: profile.id });
         if (user) {
           // User found, return it
           return cb(null, user);
         } else if (!user) {
           // User not found, create it
           const newUser = await User.create({
-            userId: profile.id,
-            email: JSON.stringify(profile),
-            username: profile.displayName,
+            username: profile._json.email.split('@')[0],
+            email: profile._json.email,
+            profileImage: profile._json.picture,
+            fullName : profile.displayName,
+            googleID : profile.id,
+            authMethod: "Google-OAuth"
           });
           // Return the new user
           return cb(null, newUser);

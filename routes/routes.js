@@ -8,7 +8,6 @@ require("../authentication/googleauth");
 
 /* GET home page. */
 router.get('/', (req, res, next) =>{
-  console.log(req.session.passport);
   res.render('index');
 });
 

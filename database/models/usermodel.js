@@ -1,25 +1,49 @@
-const mongoose = require('mongoose');
-const passportLocalMongoose = require('passport-local-mongoose');
-const findOrCreate = require('mongoose-findorcreate');
+const mongoose = require("mongoose");
+const passportLocalMongoose = require("passport-local-mongoose");
 
 const userModel = new mongoose.Schema({
-    userId: {
+    username: {
         type: String,
-        unique: true
+        required: true,
+        unique: true,
+    },
+    password: {
+        type: String,
+    },
+    googleID: {
+        type: String,
+        unique: true,
+    },
+    profileImage: {
+        type: String,
+        default: "defaultprofileimage.webp",
+    },
+    fullName: {
+        type: String,
+        required: true,
     },
     email: {
         type: String,
+        required: true,
+        unique: true,
     },
-    username: {
+    expenseList: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Expense",
+        },
+    ],
+    authMethod: {
         type: String,
     },
-    password: String
-})
-
+    isAdmin: {
+        type: Boolean,
+        default: false
+    }
+});
 
 userModel.plugin(passportLocalMongoose);
-userModel.plugin(findOrCreate);
 
-const User = mongoose.model('User', userModel);
+const User = mongoose.model("User", userModel);
 
 module.exports = User;

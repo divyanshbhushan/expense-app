@@ -8,6 +8,7 @@ const flashMessages = require('connect-flash');
 const passport = require('passport');
 
 const indexRouter = require('./routes/routes');
+const authRouter = require('./routes/authroutes');
 
 // Database
 require('./database/database');
@@ -38,6 +39,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use('/', authRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

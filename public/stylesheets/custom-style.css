@@ -1,0 +1,17 @@
+.input-anim{
+    z-index: 0;
+    top: .5rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    transition: .3s;
+}
+input{
+    z-index: 1;
+}
+@keyframes inpAnim {
+    to{
+        font-size: 0.75rem;
+        top: -.5rem;
+        line-height: 1rem;
+    }
+}

@@ -16,10 +16,11 @@ const userModel = new mongoose.Schema({
     },
     profileImage: {
         type: String,
-        default: "defaultprofileimage.webp",
+        default: "defaultprofileimage.svg",
     },
     fullName: {
         type: String,
+        required: true,
     },
     email: {
         type: String,

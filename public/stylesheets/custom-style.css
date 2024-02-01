@@ -11,6 +11,7 @@ input{
 @keyframes inpAnim {
     to{
         font-size: 0.75rem;
+        color: #d8b4fe;
         top: -.5rem;
         line-height: 1rem;
     }

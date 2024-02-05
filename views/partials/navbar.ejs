@@ -7,6 +7,11 @@
         <li class="">
             <a href="/about" class="navLink">About</a>
         </li>
+        <% if (admin) { %>
+         <li>
+            <a href="/admin/panel" class="bg-red-500 px-2 py-1 text-zinc-50 hover:bg-red-600 rounded-md">Admin Panel</a>
+         </li>
+        <% } %>
         <li class="">
             <% if (login) { %>
                 <a href="/logout" class="nanLoginLink">Logout</a>

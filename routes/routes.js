@@ -19,7 +19,7 @@ router.get("/", isAuthenticated , async (req, res, next) => {
   console.log(user);
   res.render("index", {
     login: true,
-    admin: user.admin
+    admin: user.isAdmin
   });
 });
 

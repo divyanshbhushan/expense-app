@@ -2,28 +2,32 @@ const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 const userModel = require('../database/models/usermodel');
+const isUnauthenticated = require('../middlewares/isUnauthenticated');
+const isAuthenticated = require('../middlewares/isAuthenticated');
+
 
 require("../authentication/localauth");
 require("../authentication/googleauth");
 
 
 //! Authentication routes
-router.get('/login', (req, res, next) =>{
-  res.render('auth/login')
+router.get('/login', isUnauthenticated, (req, res, next) =>{
+  const error = req.flash("error")
+  res.render('auth/login', {error})
 })
-router.get('/profile', (req, res, next) =>{
+router.get('/profile', isAuthenticated, (req, res, next) =>{
   let user = req.session.passport.user
   res.render('profile', {
     user
   })
 })
 router.post('/login', 
-  passport.authenticate('local', { failureRedirect: '/login' , successRedirect: '/profile'}),
+  passport.authenticate('local', { failureRedirect: '/login' , successRedirect: '/profile',  failureFlash: true, failureMessage: true }),
   function(req, res) {
     res.redirect('/');
   });
 
-  router.get('/signup', function(req, res, next) {
+  router.get('/signup', isUnauthenticated, function(req, res, next) {
     res.render('auth/signup');
   });
 

@@ -6,9 +6,14 @@ const userModel = require('../database/models/usermodel');
 const isAuthenticated = require('../middlewares/isAuthenticated');
 const isUnauthenticated = require('../middlewares/isUnauthenticated');
 
-/* GET home page. */
-router.get('/', (req, res, next) =>{
-  res.render('index');
+// GET routes
+router.get('/', async (req, res, next)  =>{
+  if(req.user){
+    return res.render("dashboard");
+  }else {
+    const user = await userModel.findOne({username:"divyanshbhushan633"}).populate();
+    console.log(user)
+  res.render('index')}
 });
 
 

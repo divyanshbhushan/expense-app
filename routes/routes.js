@@ -1,21 +1,27 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const upload = require("../middlewares/multer")
-const passport = require('passport');
-const userModel = require('../database/models/usermodel');
-const isAuthenticated = require('../middlewares/isAuthenticated');
-const isUnauthenticated = require('../middlewares/isUnauthenticated');
+const upload = require("../middlewares/multer");
+const passport = require("passport");
+const userModel = require("../database/models/usermodel");
+const expModel = require("../database/models/expensemodel");
+const isAuthenticated = require("../middlewares/isAuthenticated");
+const isUnauthenticated = require("../middlewares/isUnauthenticated");
+
+
+// Fncs
+
 
 // GET routes
-router.get('/', async (req, res, next)  =>{
-  if(req.user){
-    return res.render("dashboard");
-  }else {
-    const user = await userModel.findOne({username:"divyanshbhushan633"}).populate();
-    console.log(user)
-  res.render('index')}
+router.get("/", isAuthenticated , async (req, res, next) => {
+  const user = await userModel
+    .findOne({ username: "divyanshbhushan633" })
+    .populate("expenseList");
+  console.log(user);
+  res.render("index", {
+    login: true,
+    admin: user.admin
+  });
 });
-
 
 // POST routes
 // router.post('/createpost', isLoggedIn, upload.single("postImg"), async function(req, res) {
@@ -30,5 +36,8 @@ router.get('/', async (req, res, next)  =>{
 //   await user.save();
 //   res.redirect('/profile');
 // });
+
+
+
 
 module.exports = router;

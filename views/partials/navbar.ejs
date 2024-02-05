@@ -1,0 +1,18 @@
+<nav class="flex px-10 py-2 border-b-2 bg-zinc-50 justify-between items-center">
+    <img src="/svgs/logo-transparent.svg" alt="" class="w-12">
+    <ul class="flex gap-3 items-center">
+        <li class="">
+            <a href="/" class="navLink">Home</a>
+        </li>
+        <li class="">
+            <a href="/about" class="navLink">About</a>
+        </li>
+        <li class="">
+            <% if (login) { %>
+                <a href="/logout" class="nanLoginLink">Logout</a>
+                <% } else { %>
+                    <a href="/login" class="nanLoginLink">Login</a>
+                    <% } %>
+        </li>
+    </ul>
+</nav>

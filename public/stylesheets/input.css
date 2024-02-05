@@ -7,3 +7,9 @@
     padding: 0;
     font-family: 'Poppins', sans-serif !important;
 }
+.navLink{
+    @apply text-zinc-800 font-medium border-purple-700 hover:border-b-2
+}
+.nanLoginLink{
+    @apply bg-purple-600 px-3 py-1 text-zinc-100 rounded-3xl border-none hover:bg-purple-700
+}

@@ -16,10 +16,11 @@ router.get("/" , async (req, res, next) => {
   const user = await userModel
     .findOne({ username: "divyanshbhushan633" })
     .populate("expenseList");
-  console.log(user);
+
   res.render("index", {
     login: true,
-    admin: user.isAdmin
+    admin: user.isAdmin,
+    expenseList: user.expenseList
   });
 });
 

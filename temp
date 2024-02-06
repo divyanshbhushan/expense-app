@@ -1,0 +1,5 @@
+        <% if (expenseList.length !== 0) { %>
+            hey
+        <% } else { %>
+            Hi
+        <% } %>

@@ -1,3 +1,29 @@
-<section class="w-full h-full p-10">
+<section class="w-full h-full p-10 flex flex-col relative">
     <h2 class="font-semibold text-3xl text-zinc-800">Your Expenses</h2>
+    <button id="addNewExpenseToggler">r</button>
+    <div class="flex w-3/5 flex-col mx-auto items-center absolute left-[10%] top-[-100vh] transition-all duration-700 bg-red-300" id="addNewExpenseContainer">
+        <form action="/create" method="post" class="flex flex-col w-full gap-4">
+            <h3 class="font-semibold text-2xl text-zinc-700">Create an expense</h3>
+            <div class="w-full flex items-center justify-around mt-10">
+                <div class="flex flex-col w-3/5 gap-4">
+                    <div class="flex gap-2 items-center text-lg justify-between text-zinc-600 font-medium">
+                        <label for="date">Select the date you spend on:</label>
+                        <input class="border-2 px-3 py-1 rounded-md text-zinc-600 w-56 font-normal text-base" type="date" name="date" id="date">
+                    </div>
+                    <div class="flex gap-2 items-center text-lg justify-between text-zinc-600 font-medium">
+                        <label for="via">Select the option you paid with:</label>
+                        <select class="border-2 px-3 py-1 rounded-md text-zinc-600 w-56 font-normal text-base" name="via" id="via">
+                            <option value="card">Card</option>
+                            <option value="cash">Cash</option>
+                            <option value="upi">UPI</option>
+                            <option value="nbanking">Net banking</option>
+                        </select>
+                    </div>
+                    <input class="border-2 px-3 py-1 rounded-md text-zinc-600 w-full" placeholder="" type="text" name="title" id="title">
+                    <input class="border-2 px-3 py-1 rounded-md text-zinc-600 w-full" placeholder="" type="text" name="amount" id="amount">
+                    <textarea class="border-2 px-3 py-1 rounded-md text-zinc-600 w-full" placeholder="Tell more where and how did you spend money" rows="10" type="text" name="description" id="description"></textarea>
+                </div>
+            </div>
+        </form>
+    </div>
 </section>

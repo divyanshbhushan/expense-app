@@ -598,6 +598,42 @@ video {
   top: 0px;
 }
 
+.top-\[-100\]{
+  top: -100;
+}
+
+.top-\[-100vw\]{
+  top: -100vw;
+}
+
+.top-\[-100vh\]{
+  top: -100vh;
+}
+
+.left-auto{
+  left: auto;
+}
+
+.left-\[\]{
+  left: ;
+}
+
+.left-\[10\%\]{
+  left: 10%;
+}
+
+.top-10{
+  top: 2.5rem;
+}
+
+.top-20{
+  top: 5rem;
+}
+
+.top-16{
+  top: 4rem;
+}
+
 .mx-5{
   margin-left: 1.25rem;
   margin-right: 1.25rem;
@@ -606,6 +642,16 @@ video {
 .mx-auto{
   margin-left: auto;
   margin-right: auto;
+}
+
+.my-5{
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.my-10{
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .mb-0{
@@ -632,48 +678,24 @@ video {
   margin-top: 0.5rem;
 }
 
-.mt-3{
-  margin-top: 0.75rem;
-}
-
 .mt-20{
   margin-top: 5rem;
 }
 
-.mt-\[10\]{
-  margin-top: 10;
+.mt-3{
+  margin-top: 0.75rem;
 }
 
-.mt-\[10\%\]{
-  margin-top: 10%;
-}
-
-.mt-\[100px\]{
-  margin-top: 100px;
-}
-
-.mt-\[100\%\]{
-  margin-top: 100%;
+.mt-40{
+  margin-top: 10rem;
 }
 
 .mt-9{
   margin-top: 2.25rem;
 }
 
-.mt-\[10vh\]{
-  margin-top: 10vh;
-}
-
-.mt-\[10vmin\]{
-  margin-top: 10vmin;
-}
-
-.mt-\[20vmin\]{
-  margin-top: 20vmin;
-}
-
-.mt-40{
-  margin-top: 10rem;
+.mt-16{
+  margin-top: 4rem;
 }
 
 .block{
@@ -728,20 +750,20 @@ video {
   height: 24rem;
 }
 
-.h-screen{
-  height: 100vh;
-}
-
 .h-full{
   height: 100%;
 }
 
-.h-\[10\]{
-  height: 10;
+.h-screen{
+  height: 100vh;
 }
 
 .min-h-8{
   min-height: 2rem;
+}
+
+.min-h-96{
+  min-height: 24rem;
 }
 
 .min-h-\[500px\]{
@@ -750,18 +772,6 @@ video {
 
 .min-h-full{
   min-height: 100%;
-}
-
-.min-h-96{
-  min-height: 24rem;
-}
-
-.min-h-\[500\]{
-  min-height: 500;
-}
-
-.min-h-\[600px\]{
-  min-height: 600px;
 }
 
 .w-10{
@@ -784,6 +794,10 @@ video {
   width: 5rem;
 }
 
+.w-3{
+  width: 0.75rem;
+}
+
 .w-5{
   width: 1.25rem;
 }
@@ -796,6 +810,10 @@ video {
   width: 2rem;
 }
 
+.w-96{
+  width: 24rem;
+}
+
 .w-auto{
   width: auto;
 }
@@ -804,20 +822,32 @@ video {
   width: 100%;
 }
 
-.w-96{
-  width: 24rem;
-}
-
 .w-screen{
   width: 100vw;
 }
 
-.w-3\/4{
-  width: 75%;
+.w-4\/5{
+  width: 80%;
 }
 
-.w-3{
-  width: 0.75rem;
+.w-4{
+  width: 1rem;
+}
+
+.w-2\/5{
+  width: 40%;
+}
+
+.w-2{
+  width: 0.5rem;
+}
+
+.w-56{
+  width: 14rem;
+}
+
+.w-3\/5{
+  width: 60%;
 }
 
 .min-w-56{
@@ -860,6 +890,10 @@ video {
   flex-direction: column;
 }
 
+.items-end{
+  align-items: flex-end;
+}
+
 .items-center{
   align-items: center;
 }
@@ -872,12 +906,32 @@ video {
   justify-content: space-between;
 }
 
+.justify-around{
+  justify-content: space-around;
+}
+
 .gap-3{
   gap: 0.75rem;
 }
 
 .gap-4{
   gap: 1rem;
+}
+
+.gap-5{
+  gap: 1.25rem;
+}
+
+.gap-7{
+  gap: 1.75rem;
+}
+
+.gap-1{
+  gap: 0.25rem;
+}
+
+.gap-2{
+  gap: 0.5rem;
 }
 
 .space-y-6 > :not([hidden]) ~ :not([hidden]){
@@ -1047,6 +1101,11 @@ video {
   background-color: rgb(113 113 122 / var(--tw-bg-opacity));
 }
 
+.bg-white{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
 .bg-opacity-10{
   --tw-bg-opacity: 0.1;
 }
@@ -1063,12 +1122,12 @@ video {
   --tw-bg-opacity: 0.5;
 }
 
-.p-3{
-  padding: 0.75rem;
-}
-
 .p-10{
   padding: 2.5rem;
+}
+
+.p-3{
+  padding: 0.75rem;
 }
 
 .px-0{
@@ -1181,9 +1240,19 @@ video {
   line-height: 2rem;
 }
 
+.text-3xl{
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
 .text-base{
   font-size: 1rem;
   line-height: 1.5rem;
+}
+
+.text-lg{
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 
 .text-sm{
@@ -1201,16 +1270,6 @@ video {
   line-height: 1rem;
 }
 
-.text-lg{
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-}
-
-.text-3xl{
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-
 .font-bold{
   font-weight: 700;
 }
@@ -1221,6 +1280,10 @@ video {
 
 .font-semibold{
   font-weight: 600;
+}
+
+.font-normal{
+  font-weight: 400;
 }
 
 .leading-6{
@@ -1427,6 +1490,10 @@ video {
   transition-duration: 300ms;
 }
 
+.duration-700{
+  transition-duration: 700ms;
+}
+
 .ease-linear{
   transition-timing-function: linear;
 }
@@ -1498,9 +1565,4 @@ video {
 .hover\:text-zinc-700:hover{
   --tw-text-opacity: 1;
   color: rgb(63 63 70 / var(--tw-text-opacity));
-}
-
-:is(.dark .dark\:bg-zinc-800){
-  --tw-bg-opacity: 1;
-  background-color: rgb(39 39 42 / var(--tw-bg-opacity));
 }

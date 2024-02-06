@@ -1201,6 +1201,16 @@ video {
   line-height: 1rem;
 }
 
+.text-lg{
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.text-3xl{
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
 .font-bold{
   font-weight: 700;
 }
@@ -1488,4 +1498,9 @@ video {
 .hover\:text-zinc-700:hover{
   --tw-text-opacity: 1;
   color: rgb(63 63 70 / var(--tw-text-opacity));
+}
+
+:is(.dark .dark\:bg-zinc-800){
+  --tw-bg-opacity: 1;
+  background-color: rgb(39 39 42 / var(--tw-bg-opacity));
 }

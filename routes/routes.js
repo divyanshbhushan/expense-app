@@ -12,7 +12,7 @@ const isUnauthenticated = require("../middlewares/isUnauthenticated");
 
 
 // GET routes
-router.get("/", isAuthenticated , async (req, res, next) => {
+router.get("/" , async (req, res, next) => {
   const user = await userModel
     .findOne({ username: "divyanshbhushan633" })
     .populate("expenseList");

@@ -1,17 +1,32 @@
 const colorModeChangerFunc = () => {
-  const colorModeChangerBtn = document.querySelector('#colorModeChangerBtn')
-  const html = document.querySelector('html')
-  colorModeChangerBtn.addEventListener('click', ()=>{
-    html.classList.toggle('dark')
-  })
+  const colorModeChangerBtn = document.querySelector("#colorModeChangerBtn");
+  const htmlElement = document.querySelector("html");
+  const colorMode = localStorage.getItem("colorMode");
+  if(colorMode){
+    htmlElement.classList.add("dark");
+  }
+  colorModeChangerBtn.addEventListener("click", () => {
+    if(htmlElement.classList.contains('dark')){
+      htmlElement.classList.remove("dark");
+      localStorage.removeItem("colorMode");
+    } else{
+      htmlElement.classList.add("dark");
+      localStorage.setItem("colorMode", "dark");
+    }
+  });
 };
 colorModeChangerFunc();
 
 const addNewExpense = () => {
-  const addNewExpenseContainer = document.querySelector('#addNewExpenseContainer');
-  const addNewExpenseToggler = document.querySelector('#addNewExpenseToggler');
-  addNewExpenseToggler.addEventListener('click', ()=>{
-    addNewExpenseContainer.style.top = '8rem'
-  });
+  const addNewExpenseContainer = document.querySelector("#addNewExpenseContainer");
+  const addNewExpenseToggler = document.querySelector("#addNewExpenseToggler");
+  addNewExpenseToggler.addEventListener("click", () => {
+    if(addNewExpenseContainer.style.scale === "1"){
+      addNewExpenseContainer.style.scale = 0;
+    } else{
+      addNewExpenseContainer.classList.remove('scale-[0]')
+      addNewExpenseContainer.style.scale = 1;
+    }
+  })
 };
 addNewExpense();

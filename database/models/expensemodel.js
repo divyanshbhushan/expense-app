@@ -18,6 +18,9 @@ const expenseModel = new mongoose.Schema({
     },
     date: {
         type: String,
+    },
+    via:{
+        type: String,
     }
 })
 

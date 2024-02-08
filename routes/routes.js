@@ -24,7 +24,24 @@ router.get("/" , async (req, res, next) => {
   });
 });
 
+
 // POST routes
+
+router.post('/create', async (req, res, next) => {
+  const user = await userModel.findOne({ username: "divyanshbhushan633" });
+  const expense = await expModel.create({
+    userID: user._id,
+    title: req.body.title,
+    amount: req.body.amount,
+    description: req.body.description,
+    via: req.body.via,
+    date: req.body.date
+  });
+  user.expenseList.push(expense);
+  await user.save();
+  res.redirect('/')
+});
+
 // router.post('/createpost', isLoggedIn, upload.single("postImg"), async function(req, res) {
 //   const user = await userModel.findOne(req.session.passport._id)
 //   const post = await postModel.create({
@@ -37,7 +54,6 @@ router.get("/" , async (req, res, next) => {
 //   await user.save();
 //   res.redirect('/profile');
 // });
-
 
 
 

@@ -730,6 +730,10 @@ video {
   margin-top: 2.25rem;
 }
 
+.mr-20{
+  margin-right: 5rem;
+}
+
 .block{
   display: block;
 }

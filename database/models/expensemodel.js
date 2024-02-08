@@ -21,6 +21,9 @@ const expenseModel = new mongoose.Schema({
     },
     via:{
         type: String,
+    },
+    currency: {
+        type: String,
     }
 })
 

@@ -35,7 +35,8 @@ router.post('/create', async (req, res, next) => {
     amount: req.body.amount,
     description: req.body.description,
     via: req.body.via,
-    date: req.body.date
+    date: req.body.date,
+    currency: req.body.currency
   });
   user.expenseList.push(expense);
   await user.save();

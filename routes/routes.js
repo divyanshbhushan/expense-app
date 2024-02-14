@@ -20,7 +20,7 @@ router.get("/" , async (req, res, next) => {
   res.render("index", {
     login: true,
     admin: user.isAdmin,
-    expenseList: user.expenseList
+    expenses: user.expenseList
   });
 });
 

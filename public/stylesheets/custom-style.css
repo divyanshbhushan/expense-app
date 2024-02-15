@@ -16,3 +16,9 @@ input{
         line-height: 1rem;
     }
 }
+.expItem{
+    border-radius: 28px;
+    background: linear-gradient(145deg, #e6e6e6, #ffffff);
+    box-shadow:  18px 18px 36px #e3e3e3,
+                 -18px -18px 36px #ffffff;
+}

@@ -199,17 +199,20 @@
         </form>
     </div>
     <div class="mx-20 mt-10 flex justify-center gap-2 flex-col">
-        <% let a = 0 %>
+        <% let count = 0 %>
         <% expenses.forEach(e => { %>
-            <% a++ %>
-            <h2>
-                <%= a %>. <%= e.title %>
-            </h2>
-            <div class="">
-                <%= e.amount %> <%= e.currency %>
-                <%= e.date %>
-                <%= e.description %>
-            </div>
+            <% count = ++count %>
+            <ul class=" w-full flex gap-4 flex-col">
+                <li class="flex items-center py-10 text-sm font-medium expItem w-3/4 border-2 px-14 gap-3">
+                    <p class="text-lg font-semibold text-zinc-900"><%= count %>.</p>
+                    <ul class="flex flex-col gap-4 items-end">
+                        <li><%= e %></li>
+                        <form action="/remove/<%= e._id %>" method="post">
+                            <button type="submit">Hey</button>
+                        </form>
+                    </ul>
+                </li>
+            </ul>
         <% }) %>
     </div>
 </section>

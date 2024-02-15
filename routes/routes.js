@@ -43,6 +43,17 @@ router.post('/create', async (req, res, next) => {
   res.redirect('/')
 });
 
+router.post('/remove/:id', async function(req, res){
+  let id=req.params.id;
+  const item = await expModel.findOne({_id:id});
+  const user = await userModel.findOne({username: "divyanshbhushan633"}).populate("expenseList");
+  const index = user.expenseList.indexOf(item);
+  await expModel.deleteOne({_id: id})
+  user.expenseList.splice(index,1);
+  await user.save();
+  res.redirect("/")
+})
+
 // router.post('/createpost', isLoggedIn, upload.single("postImg"), async function(req, res) {
 //   const user = await userModel.findOne(req.session.passport._id)
 //   const post = await postModel.create({

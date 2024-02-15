@@ -1,21 +1,4 @@
-const colorModeChangerFunc = () => {
-  const colorModeChangerBtn = document.querySelector("#colorModeChangerBtn");
-  const htmlElement = document.querySelector("html");
-  const colorMode = localStorage.getItem("colorMode");
-  if(colorMode){
-    htmlElement.classList.add("dark");
-  }
-  colorModeChangerBtn.addEventListener("click", () => {
-    if(htmlElement.classList.contains('dark')){
-      htmlElement.classList.remove("dark");
-      localStorage.removeItem("colorMode");
-    } else{
-      htmlElement.classList.add("dark");
-      localStorage.setItem("colorMode", "dark");
-    }
-  });
-};
-colorModeChangerFunc();
+
 
 const addNewExpense = () => {
   const addNewExpenseContainer = document.querySelector("#addNewExpenseContainer");

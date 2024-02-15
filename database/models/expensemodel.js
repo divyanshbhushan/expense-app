@@ -11,7 +11,7 @@ const expenseModel = new mongoose.Schema({
     },
     description: {
         type: String,
-    },
+    }, 
     userID: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",

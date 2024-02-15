@@ -7,6 +7,13 @@
         <li class="">
             <a href="/about" class="navLink">About</a>
         </li>
+        <li class="">
+            <button class="addNewExpenseToggler border-2 rounded-full px-1 py-1 border-blue-600 bg-blue-600 text-zinc-50 hover:bg-blue-700">
+                <abbr title="Add new expense" class="decoration-transparent transition-all duration-75">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M11 11V5H13V11H19V13H13V19H11V13H5V11H11Z"></path></svg>
+                </abbr>
+            </button>
+        </li>
         <% if (admin) { %>
          <li>
             <a href="/admin/panel" class="bg-red-500 px-2 py-1 text-zinc-50 hover:bg-red-600 rounded-md">Admin Panel</a>
